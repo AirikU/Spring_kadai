@@ -1,4 +1,4 @@
-package jp.ac.morijyobi;
+package jp.ac.morijyobi.SpringKadai;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
