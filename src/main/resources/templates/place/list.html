@@ -6,7 +6,17 @@
     <title>Title</title>
 </head>
 <body>
-    <h2>訪問した市町村一覧</h2>
+    <h2 style="text-align: center">訪問した市町村一覧</h2>
+    <p style="text-align: center">これまでに訪問した市町村を振り返るページです</p>
+    <div style="text-align: center; margin: 10px">
+        <a th:href="@{/place/register}" class="btn btn-primary">新規登録</a>
+    </div>
+    <div style="text-align: center; margin: 10px">
+        <form th:action="@{/place/search}" method="get">
+            <input type="text" name="keyword" size="30%">
+            <button type="submit">検索</button>
+        </form>
+    </div>
     <div class="mx-auto" style="width: 95%">
         <table class="table table-striped">
             <colgroup><!--列ごとの幅を設定-->
