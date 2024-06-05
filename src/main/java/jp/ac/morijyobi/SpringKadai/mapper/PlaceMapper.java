@@ -23,7 +23,7 @@ public interface PlaceMapper {
     @Update("UPDATE place SET place_name = #{placeName}, " +
             "first_visit_date_time = #{firstVisitDateTime}, " +
             "last_visit_date_time = #{lastVisitDateTime}, " +
-            "situation = #{situation}, " +
+            "situation = #{situation} " +
             "WHERE id = #{id}")
     int updatePlaceById(Place place);
 
