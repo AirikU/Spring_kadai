@@ -64,7 +64,7 @@ public class PlaceController {
         Place place = placeService.getPlaceById(placeId);
         model.addAttribute("place", place);
 
-        return "place/confirm-delete";
+        return "place/delete";
     }
 
     @GetMapping("/delete")
