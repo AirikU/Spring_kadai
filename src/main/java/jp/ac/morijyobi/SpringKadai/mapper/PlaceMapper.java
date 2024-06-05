@@ -7,7 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface PlaceMapper {
-    @Insert("INSERT INTO place(place_name, firstvisit_date_time, last_visit_date_time, situation) VALUES (#{placeName}, #{firstVisitDateTime}, #{lastVisitDateTime}, ${situation})")
+    @Insert("INSERT INTO place(place_name, first_visit_date_time, last_visit_date_time, situation) VALUES (#{placeName}, #{firstVisitDateTime}, #{lastVisitDateTime}, ${situation})")
     @Options(useGeneratedKeys = true, keyProperty = "id")
     void insertPlace(Place place);
 

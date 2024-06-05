@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Controller
-@RequestMapping("/journey")
+@RequestMapping("/place")
 public class PlaceController {
     private final PlaceService placeService;
 
@@ -24,22 +24,22 @@ public class PlaceController {
 
     @GetMapping("/register")
     public String register() {
-        return "journey/register";
+        return "place/register";
     }
 
     @PostMapping("/register")
-    public String registerExe(@RequestParam String place_name,
-                              @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime first_visit_date_time,
-                              @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime last_visit_date_time,
+    public String registerExe(@RequestParam String placeName,
+                              @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime firstVisitDateTime,
+                              @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime lastVisitDateTime,
                               @RequestParam String situation,
                               Model model) {
 
         // DBにINSERTする処理を呼び出す
-        PlaceForm place = new PlaceForm(place_name, first_visit_date_time, last_visit_date_time, situation);
+        PlaceForm place = new PlaceForm(placeName, firstVisitDateTime, lastVisitDateTime, situation);
         Place placeEntity = placeService.registerPlace(place);
         System.out.println(placeEntity.getId());
 
-        return "redirect:/journey/list";
+        return "redirect:/place/list";
 
     }
 
