@@ -5,12 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<h2>訪問場所登録</h2>
+<h2>訪問した市町村登録</h2>
 <form th:action="@{/place/register}" method="post">
-    <p>訪問した場所：<input type="text" name="placeName"></p>
-    <p>最初に訪問した日時：<input type="datetime-local" name="firstVisitDateTime"></p>
-    <p>最後に訪問した日時：<input type="datetime-local" name="lastVisitDateTime"></p>
-    <p>目的等：<input type="text" name="situation"></p>
+    <p>訪問した市町村：<input type="text" name="placeName"></p>
+    <p>初めて訪問した日時：<input type="datetime-local" name="firstVisitDateTime"></p>
+    <p>最近訪問した日時：<input type="datetime-local" name="lastVisitDateTime"></p>
+    <p>最近訪問した目的等：<input type="text" name="situation"></p>
     <button type="submit">登録</button>
 </form>
 </body>
