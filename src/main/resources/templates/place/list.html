@@ -6,22 +6,23 @@
     <title>Title</title>
 </head>
 <body>
-    <h2>リスト一覧</h2>
+    <h2>訪問した場所一覧</h2>
     <div class="mx-auto" style="width: 95%">
         <table class="table table-striped">
             <colgroup><!--列ごとの幅を設定-->
                 <col style="width: 5%">
-                <col style="width: 45%">
                 <col style="width: 25%">
                 <col style="width: 10%">
-                <col style="width: 15%">
-
+                <col style="width: 10%">
+                <col style="width: 40%">
+                <col style="width: 10%">
             </colgroup>
             <tr>
                 <th>ID</th>
-                <th>研修タイトル</th>
-                <th>研修日</th>
-                <th>予約数</th>
+                <th>訪問した場所</th>
+                <th>最初に訪問した日時</th>
+                <th>最後に訪問した日時</th>
+                <th>目的等</th>
                 <th></th>
             </tr>
 
@@ -31,12 +32,13 @@
                         <span th:text="${place.id}"></span>
                     </a>
                 </td>
-                <td><span th:text="${place.title}">sample title</span></td>
-                <td><span th:text="${#temporals.format(place.startDateTime, 'MM月dd日 HH:mm')}">sample date</span></td>
-                <td><span th:text="${place.reserved}">0</span></td>
+                <td><span th:text="${place.placeName}">sample title</span></td>
+                <td><span th:text="${#temporals.format(place.firstVisitDateTime, 'YYYY年 MM月dd日')}">sample date</span></td>
+                <td><span th:text="${#temporals.format(place.lastVisitDateTime, 'YYYY年 MM月dd日')}">sample date</span></td>
+                <td><span th:text="${place.situation}">自宅</span></td>
                 <td>
-                    <a th:href="@{/journey/confirm-delete(placeId=${place.id})}" class="btn btn-danger">削除</a>
-                    <a th:href="@{/journey/confirm-edit(placeId=${place.id})}" class="btn btn-primary">編集</a>
+                    <a th:href="@{/place/confirm-delete(placeId=${place.id})}" class="btn btn-danger">削除</a>
+                    <a th:href="@{/place/confirm-edit(placeId=${place.id})}" class="btn btn-primary">編集</a>
                 </td>
             </tr>
 
